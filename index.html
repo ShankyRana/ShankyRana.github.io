@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="src/index.js" async></script>
+</head>
+
+<body>
+  <picture class="umbrella-container">
+    <img id="umbrella-image" src="public/Blue umbrella.png" alt="Umbrella">
+    <img id="umbrella-loader" class="blue" src="public/loader_icon.svg" alt="Umbrella is loading...">
+    <img id="umbrella-logo" src="" alt="Your logo" />
+  </picture>
+  <div class="umbrella-modifier-container">
+    <span class="umbrella-modifier-title">Custom Umbrella</span>
+    <div class="color-swatches" onclick="updateColor();">
+      <span class="umbrella-modifier-color-swatch" id="pink"></span>
+      <span class="umbrella-modifier-color-swatch selected" id="blue"></span>
+      <span class="umbrella-modifier-color-swatch" id="yellow"></span>
+    </div>
+    <div class="umbrella-modifier-info">
+      <span class="umbrella-modifier-info-title">Customize your umbrella</span>
+      <span class="umbrella-modifier-info-description">Upload an logo for instant preview</span>
+      <span class="umbrella-modifier-info-condition">.png and .jpg files only. Max file size is 5MB</span>
+    </div>
+    <div class="umbrella-modifier-button-container">
+      <button id="umbrella-modifier-button" onclick="updateLogo()">
+        <img id="umbrella-modifier-button-icon" src="public/upload_icon.svg" />
+        <img id="umbrella-modifier-button-loader" class="blue" src="public/loader_icon.svg" alt="">
+        <span id="umbrella-modifier-button-text">UPLOAD LOGO</span>
+        <span id="umbrella-modifier-button-close" onclick="clearLogo();">&times;</span>
+      </button>
+      <input id="umbrella-modifier-button-input" type="file" name="myfile" accept=".jpg,.jpeg,.png" />
+    </div>
+    <p id="umbrella-modifier-error"></p>
+  </div>
+</body>
+
+</html>

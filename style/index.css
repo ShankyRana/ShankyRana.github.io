@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  position: relative;
+  display: flex;
+  padding: 10em;
+  background-color: rgb(69, 177, 228, 0.15);
+}
+
+
+/* Style umbrella container */
+
+.umbrella-container {
+  position: relative;
+  width: 65%;
+  display: block;
+  display: flex;
+  justify-content: center;
+}
+
+.umbrella-container::after {
+  bottom: 0;
+  right: 0;
+  background-position: right bottom;
+}
+
+.umbrella-container #umbrella-image {
+  width: 30em;
+  animation: fade-in 1.5s linear forwards;
+}
+
+.umbrella-container #umbrella-image.hide {
+  animation: fade-out .5s linear forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.umbrella-container #umbrella-logo {
+  display: none;
+  bottom: 25px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Style umbrella loader and button loader */
+
+.umbrella-container #umbrella-loader,
+.umbrella-modifier-container #umbrella-modifier-button #umbrella-modifier-button-loader {
+  display: none;
+  width: 5em;
+  position: absolute;
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+.umbrella-container #umbrella-loader {
+  top: 50%;
+  margin: -3em 0;
+}
+
+.umbrella-container #umbrella-loader.pink {
+  filter: invert(41%) sepia(100%) saturate(2711%) hue-rotate(306deg) brightness(89%) contrast(92%);
+}
+
+.umbrella-container #umbrella-loader.blue {
+  filter: invert(66%) sepia(73%) saturate(1702%) hue-rotate(169deg) brightness(96%) contrast(86%);
+}
+
+.umbrella-container #umbrella-loader.yellow {
+  filter: invert(91%) sepia(71%) saturate(1814%) hue-rotate(320deg) brightness(103%) contrast(96%);
+}
+
+
+/* Style umbrella modifier container */
+
+.umbrella-modifier-container {
+  width: 35%;
+  padding: 3em 1em;
+}
+
+.umbrella-modifier-container .umbrella-modifier-title {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 40px;
+}
+
+.umbrella-modifier-container .color-swatches {
+  margin: 2em 0em;
+}
+
+.umbrella-modifier-container .color-swatches .umbrella-modifier-color-swatch {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.umbrella-modifier-container .color-swatches .umbrella-modifier-color-swatch.selected {
+  border: 4px solid rgba(228, 235, 239, 0.75);
+}
+
+.umbrella-modifier-container .color-swatches #pink {
+  background-color: rgb(218, 62, 140);
+}
+
+.umbrella-modifier-container .color-swatches #blue {
+  background-color: rgb(69, 177, 228);
+}
+
+.umbrella-modifier-container .color-swatches #yellow {
+  background-color: rgb(250, 209, 73);
+}
+
+
+/* Style umbrella modifier information */
+
+.umbrella-modifier-info {
+  flex-direction: column;
+  display: flex;
+  letter-spacing: 1px;
+}
+
+.umbrella-modifier-info span {
+  padding: 0.2em 0;
+  letter-spacing: 1px;
+}
+
+.umbrella-modifier-info .umbrella-modifier-info-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.umbrella-modifier-info .umbrella-modifier-info-description {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.umbrella-modifier-info .umbrella-modifier-info-condition {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+
+/* Style umbrella modifier button and input */
+
+.umbrella-modifier-container .umbrella-modifier-button-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 1em 0;
+  width: 100%;
+
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container input[type=file] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button {
+  width: 100%;
+  height: 50px;
+  background: #44b0e4;
+  border-radius: 0;
+  border: 0;
+  position: relative;
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button-icon,
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button #umbrella-modifier-button-loader {
+  position: absolute;
+  left: 0;
+  margin: 0 1em;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button #umbrella-modifier-button-loader {
+  margin-top: -0.3em;
+  width: 2em;
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button #umbrella-modifier-button-text {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.umbrella-modifier-container .umbrella-modifier-button-container #umbrella-modifier-button #umbrella-modifier-button-close {
+  display: none;
+  font-size: 36px;
+  font-weight: 100;
+  color: white;
+  position: absolute;
+  right: 0;
+  margin: -0.2em 0.2em;
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+/* Style umbrella modifier error */
+
+.umbrella-modifier-container #umbrella-modifier-error {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: red;
+  width: 100%;
+  margin: 0;
+}
+
+
+/* Style responsive */
+
+@media only screen and (max-width: 1200px) {
+  body {
+    flex-direction: column;
+  }
+
+  .umbrella-container,
+  .umbrella-modifier-container {
+    padding: 2em 1em;
+    width: 100%;
+  }
+
+  .umbrella-container #umbrella-logo {
+    bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 1em;
+  }
+
+  .umbrella-container,
+  .umbrella-modifier-container {
+    padding: 2em 1em;
+    width: 100%;
+  }
+
+  .umbrella-container #umbrella-logo {
+    bottom: 60px;
+  }
+
+  .umbrella-container #umbrella-image {
+    width: 25em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .umbrella-container #umbrella-image {
+    width: 18em;
+  }
+}
